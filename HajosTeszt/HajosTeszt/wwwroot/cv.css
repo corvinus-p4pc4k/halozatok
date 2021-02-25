@@ -1,0 +1,45 @@
+﻿body { 
+    background-color:lightgoldenrodyellow;
+    font-size: 20px;
+    
+}
+h1 {
+    font-size: 60px;
+    color: blue;
+    font-style: oblique;
+    text-align: center;
+}
+
+h3 {
+    font-size: 30px;
+    color: darkcyan;
+}
+
+span {
+    font-style: italic;
+    font-size: 30px;
+    color: fuchsia;
+    border: solid;
+    border-radius: 25px;
+    background-color: white;
+}
+
+    span:hover {
+        background-color: yellowgreen;
+    }
+
+div {
+   border: solid;
+   border-color: white;
+   border-radius: 28px;
+   /*border-width : 150px;*/
+   margin:200px;;
+}
+
+#csakugy {
+    color:aquamarine;
+}
+
+.klasz{
+    font-weight:bold;
+}
