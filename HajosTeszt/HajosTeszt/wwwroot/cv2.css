@@ -1,0 +1,56 @@
+﻿#cim {
+    background-color: mediumspringgreen;
+    text-align: center;
+}
+
+#main {
+    background-color: turquoise;
+}
+
+#lista {
+    background-color: lightseagreen;
+}
+
+#kep {
+    background-color: moccasin;
+    text-align: center;
+}
+
+#kep,
+#lista, #main, #cim {
+    padding:20px;
+}
+img {
+    height: 50%;
+    width: 50%;
+}
+a{
+    color:black;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    #listakep {
+        display:flex;
+    }
+    #lista, #main {
+        order: -1;
+    }
+    #lista {
+        flex: 1 1 15%;
+    }
+
+    #kep {
+        flex: 1 2 85%;
+    }
+    img {
+        height:auto;
+        width:auto;
+    }
+}
