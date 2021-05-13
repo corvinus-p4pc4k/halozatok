@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Jokes</title>
+
+</head>
+<body>
+    <form>
+        <div id="jokeList"></div>
+        <div>
+            <input id="jokeText" type="text" placeholder="Csak PC vicc" />
+        </div>
+        <button id="addButton">Új vicc felvétele</button>
+    </form>
+    <div id="allJokes">
+
+    </div>
+    <script>
+        document.getElementById("addButton").addEventListener("click", () => {
+            //Ezt az objektumot fogjuk átküldeni
+            var txt = {
+                text: document.getElementById("jokeText").value
+            }
+            console.log("lefut");
+            
+            console.log(JSON.stringify(txt))
+            alert("Kezd")
+            fetch("api/jokes",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(txt)
+                }
+            )/*.then(x => {
+                if (x.ok) {
+                    alert("Siker");
+
+                }
+                else {
+                    alert("Kudarc");
+                }
+            });*/
+
+        });
+
+        window.onload = function () {
+            fetch("api/jokes").then(x => x.json()).then(data => showJokes(data))
+        }
+
+        function showJokes(d) {
+            //console.log(d);
+            document.getElementById("allJokes");
+            for (var a = 0; a < d.length; a++) {
+                let p = document.createElement("p")
+                //console.log(d[a].jokeText)
+                p.innerHTML = d[a].jokeText;
+                document.getElementById("allJokes").appendChild(p)
+            }
+        }
+    </script>
+</body>
+</html>
